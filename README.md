@@ -10,7 +10,7 @@ There are a few things that should be kept in mind when looking at this. Firstly
 
 # Data harvesting
 
-Data is extracted from the PDF produced by the Landesregierun Breisgau-Hochscharzwald every week using pdftotext. Then the scripts under `scripts/` are used to format this into a standard TSV file (`incidence.txt`). The text file made from the PDF isn't always formatted exactly the same from week to week, so the python scripts used for this often need to be tweaked slightly.
+Data is extracted from the PDF produced by the Landesregierung Breisgau-Hochschwarzwald every week using `pdftotext`. Then the scripts under `scripts/` are used to format this into a standard TSV file (`incidence.txt`). The text file made from the PDF isn't always formatted exactly the same from week to week, so the python scripts used for this often need to be tweaked slightly.
 
 # Image creation
 
