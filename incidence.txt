@@ -249,3 +249,81 @@ Titisee-Neustadt	11.03.2021	8.198737394441256
 Umkirch	11.03.2021	468.5059864653826
 Vogtsburg im Kaiserstuhl	11.03.2021	32.80301787764474
 Wittnau	11.03.2021	65.96306068601584
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;37r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[37;1H"makeDataFrameNew.py" 53L, 1957C[1;1H[34m#!/usr/bin/env python
+# In R: ggplot(d, aes(x=Location, y=Incidence)) + geom_col(aes(fill=Date), position="dodge2") + coord_flip() + scale_x_discrete(limits = rev(levels(d$$[3;1HLocation))) + xlab("")[m
+[35mimport[m argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument([31m"fname"[m, [36mhelp[m=[31m"File name"[m)
+parser.add_argument([31m"--twoWeeks"[m, action=[31m"store_true"[m, [36mhelp[m=[31m"Print the last week too"[m)
+[34m#parser.add_argument("--noHeader", action="store_true", help="Don't print a header")[m
+args = parser.parse_args()
+
+f = [36mopen[m(args.fname)
+inWeek = [31m0[m
+locations = []
+week1A = []
+week1B = []
+week2A = []
+week2B = []
+population = [[31m1480[m, [31m2796[m, [31m20377[m, [31m4432[m, [31m2440[m, [31m2338[m, [31m5331[m, [31m15488[m, [31m1751[m, [31m3129[m, [31m4387[m, [31m2867[m, [31m7501[m, [31m3632[m, [31m2131[m, [31m2491[m, [31m1862[m, [31m2007[m, [31m3167[m, [31m2912[m, [31m11683[m, [31m4768[m, [31m66[20;1H354[m, [31m1141[m, [31m2631[m, [31m1166[m, [31m6152[m, [31m9743[m, [31m5064[m, [31m7617[m, [31m9279[m, [31m2582[m, [31m5288[m, [31m19077[m, [31m5072[m, [31m12273[m, [31m2892[m, [31m2589[m, [31m6351[m, [31m2508[m, [31m1275[m, [31m1863[m, [31m2626[m, [31m8187[m, [31m4511[m, [31m2817[m, [31m121977[m[21;1H, [31m5763[m, [31m6097[m, [31m1516[m]
+date = [36mNone[m
+prevdate = [36mNone[m
+nextChunk = [31m0[m
+[38;5;130mfor[m idx, line [38;5;130min[m [36menumerate[m(f):
+    [38;5;130mif[m idx < [31m3[m:[27;9H[38;5;130mcontinue
+[m    [38;5;130mif[m idx == [31m3[m:[29;9Hdate = line.strip()[30;9H[38;5;130mcontinue
+[m    [38;5;130mif[m idx > [31m17[m [38;5;130mand[m idx < [31m68[m:[32;9Hlocations.append(line.strip())
+    [38;5;130melif[m idx > [31m69[m [38;5;130mand[m idx < [31m120[m:[34;9Hweek1A.append([36mint[m(line.strip()))
+    [38;5;130melif[m idx > [31m121[m [38;5;130mand[m idx < [31m172[m:[36;9Hweek1B.append([36mint[m(line.strip()))[37;133H1,1[11CTop[1;1H[?25h[?25l[37;1H[K[37;1H:[?2004h[?25hQ[?25l[?25h![?25l[?25h[?25l[97m[41mE492: Not an editor command: Q![m[101C1,1[11CTop[1;1H[?25h[?25l[37;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[37;133H[K[37;133H1,1[11CTop[1;1H[?25h[?25l[37;1H[K[37;1H:[?2004h[?25h[?25l[37;1H[K[37;133H1,1[11CTop[1;1H[?25h[37;1H[?2004l[?1l>[?1049l[23;0;0tVim: Caught deadly signal TERM
+Vim: Finished.
+[37;1HAu	18.03.2021	0
+Auggen	18.03.2021	35.7653791130186
+Bad Krozingen	18.03.2021	39.25994994356382
+Badenweiler	18.03.2021	0
+Ballrechten-Dottingen	18.03.2021	40.983606557377044
+Bollschweil	18.03.2021	85.5431993156544
+Bötzingen	18.03.2021	412.68054773963604
+Breisach am Rhein	18.03.2021	148.5020661157025
+Breitnau	18.03.2021	0
+Buchenbach	18.03.2021	31.95909236177693
+Buggingen	18.03.2021	22.794620469569182
+Ebringen	18.03.2021	0
+Ehrenkirchen	18.03.2021	133.31555792560994
+Eichstetten am Kaiserstuhl	18.03.2021	27.533039647577095
+Eisenbach (Hochschwarzwald)	18.03.2021	0
+Eschbach	18.03.2021	40.14452027298274
+Feldberg (Schwarzwald)	18.03.2021	0
+Friedenweiler	18.03.2021	0
+Glottertal	18.03.2021	252.60498894853177
+Gottenheim	18.03.2021	0
+Gundelfingen	18.03.2021	17.118890695882907
+Hartheim am Rhein	18.03.2021	83.89261744966443
+Heitersheim	18.03.2021	15.738117721120554
+Heuweiler	18.03.2021	0
+Hinterzarten	18.03.2021	0
+Horben	18.03.2021	0
+Ihringen	18.03.2021	65.01950585175553
+Kirchzarten	18.03.2021	10.263779123473263
+Lenzkirch	18.03.2021	19.747235387045816
+Löffingen	18.03.2021	39.38558487593541
+March	18.03.2021	161.65535079211122
+Merdingen	18.03.2021	77.45933384972889
+Merzhausen	18.03.2021	37.821482602118
+Müllheim	18.03.2021	94.35445824815223
+Münstertal/Schwarzwald	18.03.2021	0
+Neuenburg am Rhein	18.03.2021	138.51544039762078
+Oberried	18.03.2021	69.15629322268326
+Pfaffenweiler	18.03.2021	231.7497103128621
+Schallstadt	18.03.2021	47.23665564478035
+Schluchsee	18.03.2021	39.87240829346092
+Sölden	18.03.2021	0
+St. Märgen	18.03.2021	107.35373054213633
+St. Peter	18.03.2021	38.08073115003808
+Staufen im Breisgau	18.03.2021	0
+Stegen	18.03.2021	0
+Sulzburg	18.03.2021	35.49875754348598
+Titisee-Neustadt	18.03.2021	0
+Umkirch	18.03.2021	399.09769217421484
+Vogtsburg im Kaiserstuhl	18.03.2021	82.00754469411186
+Wittnau	18.03.2021	65.96306068601584
