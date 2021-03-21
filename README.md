@@ -4,6 +4,10 @@ This repository is meant to compute and display the population-normalized Covid-
 
 ![Animated map](https://github.com/dpryan79/bhsw_covid_incidence/raw/main/animation.gif)
 
+# Caveats
+
+There are a few things that should be kept in mind when looking at this. Firstly, many of the communities are quite small, so a single case will mean that their population-normalized incidence will increase by ~40 cases/100,000 population/week. A second main caveat is that these numbers are approximate. I don't have access to the actual weekly numbers, so things like corrections to a previous week's values will either get lost or artificially decrease the numbers for the week during which the correction is reported.
+
 # Data harvesting
 
 Data is extracted from the PDF produced by the Landesregierun Breisgau-Hochscharzwald every week using pdftotext. Then the scripts under `scripts/` are used to format this into a standard TSV file (`incidence.txt`). The text file made from the PDF isn't always formatted exactly the same from week to week, so the python scripts used for this often need to be tweaked slightly.
