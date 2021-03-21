@@ -12,17 +12,16 @@ bhsw = shps[which(shps$NUTS=='DE132'),]
 # Load incidence data, add color groups for ggplot2
 incidence = read.delim("incidence.txt")
 incidence$Date = as.Date(incidence$Date, format="%d.%m.%Y")
-breaks = c(0,25,35,50,100,200,350,500,1000,2000)
-breakLabels = sprintf(">=%i, <%i", breaks[1:length(breaks)-1], breaks[2:length(breaks)])
-incidence$Group = cut(incidence$Incidence,
-                      breaks=breaks, labels=breakLabels, include.lowest=T)
+breaks = c(-1, 0,5,25,50,100,250,500,1000,2000)
+breakLabels = c("0", sprintf(">%i, <=%i", breaks[seq(2, length(breaks)-1)], breaks[seq(3, length(breaks))]))
+incidence$Group = cut(incidence$Incidence, breaks=breaks, labels=breakLabels)
 
 # Merge GIS and incidence
 bhswi = merge(bhsw, incidence, by.x="GEN", by.y="Location")
 
 # Plot
 annotation = "GIS: © GeoBasis-DE / BKG 2016\nData: Landesregierung Breisgau-Hochschwarzwald\nImage: https://github.com/dpryan79/bhsw_covid_incidence"
-colorscale = c("white", "#ffeda0", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026", "black")
+colorscale = c("gray80", "#f4fbc6", "#effb70", "#f8c001", "#d70f01", "#980101", "#690109", "#e60183", "black")
 g = ggplot(bhswi, aes(frame=Date)) + geom_sf(aes(fill=Group, group=seq_along(Group))) + theme_classic()
 g = g + annotate(geom="text", label=annotation, x=Inf, y=-Inf, hjust=1, vjust=0, size=3)
 g = g + labs(fill="Cases/100k\nper week", x="", y="") + scale_fill_manual(values=colorscale, guide = guide_legend(reverse=TRUE))
