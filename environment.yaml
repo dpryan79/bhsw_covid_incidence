@@ -1,0 +1,11 @@
+name: blah
+channels:
+  - conda-forge
+  - defaults
+depedencies:
+  - r-base >=4.0
+  - r-sf
+  - r-ggplot2
+  - r-gganimate
+  - r-gifski
+  - r-transformr
