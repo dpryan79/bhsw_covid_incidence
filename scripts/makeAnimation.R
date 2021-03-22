@@ -28,5 +28,6 @@ g = g + labs(fill="Cases/100k\nper week", x="", y="") + scale_fill_manual(values
 g = g + transition_states(Date, state_length=4, transition_length=2) + ggtitle("Week of {closest_state}")
 g = g + theme(axis.line=element_blank(), axis.text=element_blank(), axis.ticks = element_blank(), legend.title=element_text(size=24), legend.text=element_text(size=24), plot.title=element_text(size=24))
 g = g + geom_sf_label(data=bhsw, aes(label=GEN), fill = alpha(c("white"),0.5))
+g = g + enter_fade() + exit_fade()
 a = animate(g, width=1200, height=800, renderer=gifski_renderer())
 anim_save("animation.gif", a)
