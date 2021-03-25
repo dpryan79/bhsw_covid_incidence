@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-#  pull_request:
-#    branches:
-#      - main
 jobs:
   renderGraph:
     name: Render animation
@@ -24,9 +21,7 @@ jobs:
           auto-activate-base: false
       - run: |
           Rscript scripts/makeAnimation.R
-          git diff
-#      - name: Commit & Push changes
-#        uses: actions-js/push@master
-#        with:
-#          github_token: ${{ secrets.TOKEN }}
-#          branch: update_250321
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
