@@ -20,7 +20,7 @@ incidence$Group = cut(incidence$Incidence, breaks=breaks, labels=breakLabels)
 bhswi = merge(bhsw, incidence, by.x="GEN", by.y="Location")
 
 # Plot
-annotation = "GIS: © GeoBasis-DE / BKG 2016\nData: Landesregierung Breisgau-Hochschwarzwald\nImage: https://github.com/dpryan79/bhsw_covid_incidence"
+annotation = "GIS: © GeoBasis-DE / BKG 2016\nData: Landeskreis Breisgau-Hochschwarzwald\nImage: https://github.com/dpryan79/bhsw_covid_incidence"
 colorscale = c("gray80", "#f4fbc6", "#effb70", "#f8c001", "#d70f01", "#980101", "#690109", "#e60183", "black")
 g = ggplot(bhswi) + geom_sf(aes(fill=Group, group=seq_along(Group))) + theme_classic()
 g = g + annotate(geom="text", label=annotation, x=Inf, y=-Inf, hjust=1, vjust=-0.1, size=5)

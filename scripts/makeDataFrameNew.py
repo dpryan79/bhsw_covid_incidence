@@ -5,7 +5,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("fname", help="File name")
 parser.add_argument("--twoWeeks", action="store_true", help="Print the last week too")
-#parser.add_argument("--noHeader", action="store_true", help="Don't print a header")
+parser.add_argument("--debug", action="store_true", help="Print debugging info")
 args = parser.parse_args()
 
 f = open(args.fname)
@@ -20,6 +20,8 @@ date = None
 prevdate = None
 nextChunk = 0
 for idx, line in enumerate(f):
+    if args.debug:
+        print([idx, line.strip()])
     if idx < 3:
         continue
     if idx == 3:
@@ -45,9 +47,15 @@ if args.twoWeeks:
 for l, w1a, w1b, w2a, w2b, p in zip(locations, week1A, week1B, week2A, week2B, population):
     currentWeek = w1a - w2a
     lastWeek = w1b - currentWeek
-    p100k = p / 100000
+    p100k = p / 100000.
     p100kpw1 = max(0, currentWeek/p100k)
     p100kpw2 = max(0, lastWeek/p100k)
-    print("{}\t{}\t{}".format(l, date, p100kpw1))
+    if args.debug:
+        print("{}\t{}\t{}\t{}".format(l, date, currentWeek, p100kpw1))
+    else:
+        print("{}\t{}\t{}".format(l, date, p100kpw1))
     if args.twoWeeks:
-        print("{}\t{}\t{}".format(l, prevdate, p100kpw2))
+        if args.debug:
+            print("{}\t{}\t{}\t{}".format(l, prevdate, currentWeek, p100kpw2))
+        else:
+            print("{}\t{}\t{}".format(l, prevdate, p100kpw2))
