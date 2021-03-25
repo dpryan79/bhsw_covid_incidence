@@ -21,6 +21,6 @@ jobs:
           auto-activate-base: false
           activate-environment: "blah"
       - run: |
-          conda env list
+          conda activate blah
           Rscript scripts/makeAnimation.R
           ls -l
