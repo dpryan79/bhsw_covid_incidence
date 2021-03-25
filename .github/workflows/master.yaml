@@ -16,14 +16,11 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
-          activate-environment: "blah"
           condarc-file: ".github/condarc"
           environment-file: "environment.yaml"
           auto-activate-base: false
+          activate-environment: "blah"
       - run: |
-          conda info
           conda env list
-          conda list
-          which Rscript
           Rscript scripts/makeAnimation.R
           ls -l
