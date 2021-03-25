@@ -16,7 +16,6 @@ jobs:
         with:
           auto-update-conda: true
           python-version: 3.8
-          auto-activate-base: false
           activate-environment: "blah"
           condarc-file: ".github/condarc"
           environment-file: "environment.yaml"
