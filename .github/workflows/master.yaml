@@ -10,17 +10,19 @@ jobs:
   renderGraph:
     name: Render animation
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v2
       - uses: conda-incubator/setup-miniconda@v2
         with:
-          auto-update-conda: true
+          activate-environment: blah
+          environment-file: environment.yaml
           python-version: 3.8
-          condarc-file: ".github/condarc"
-          environment-file: "environment.yaml"
+          condarc-file: .github/condarc
           auto-activate-base: false
-          activate-environment: "blah"
       - run: |
-          source activate blah
+          conda env list
           Rscript scripts/makeAnimation.R
           git diff
