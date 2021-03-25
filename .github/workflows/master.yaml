@@ -1,0 +1,24 @@
+name: Render animation
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  renderGraph:
+    name: Render animation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          python-version: 3.8
+          activate-environment: "blah"
+          condarc-file: ".github/condarc"
+          environment-file: "environment.yaml"
+          auto-activate-base: false
+      - run: |
+          Rscript scripts/makeAnimation.R
+          ls -l
