@@ -21,5 +21,8 @@ jobs:
           environment-file: "environment.yaml"
           auto-activate-base: false
       - run: |
+          conda info
+          conda list
+          which Rscript
           Rscript scripts/makeAnimation.R
           ls -l
