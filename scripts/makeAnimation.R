@@ -46,3 +46,16 @@ g = g + enter_fade() + exit_fade()
 nframes = 3 * 10 * length(unique(bhswi$Date))
 a = animate(g, width=1200, height=800, renderer=gifski_renderer(), nframes=nframes)
 anim_save("animation.gif", a)
+
+# Plot the last week
+lastWeek = names(rev(table(bhswi$Date))[1])
+g = ggplot(bhswi[which(bhswi$Date == lastWeek),]) + geom_sf(aes(fill=Group, group=seq_along(Group))) + theme_classic()
+g = g + annotate(geom="text", label=annotation, x=Inf, y=-Inf, hjust=1, vjust=-0.1, size=5)
+g = g + labs(fill="Cases/100,000\nper week", x="", y="") + scale_fill_manual(values=colorscale, guide = guide_legend(reverse=TRUE))
+g = g + ggtitle(sprintf("Week of %s", lastWeek))
+g = g + theme(axis.line=element_blank(), axis.text=element_blank(), axis.ticks = element_blank(), legend.title=element_text(size=24), legend.text=element_text(size=24), plot.title=element_text(size=24))
+g = g + geom_sf_label(data=bhsw, aes(label=GEN), nudge_x=bhsw$nudgeX, nudge_y=bhsw$nudgeY, fill = alpha(c("white"), 0.5))
+png("lastWeek.png", width=1200, height=800)
+g
+dev.off()
+
