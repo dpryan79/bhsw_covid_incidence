@@ -30,7 +30,7 @@ for idx, line in enumerate(f):
     if idx > 17 and idx < 68:
         locations.append(line.strip())
     elif idx > 69 and idx < 120:
-        week1A.append(int(line.strip()))
+        week1A.append(int(line.strip().strip('*')))
     elif idx > 121 and idx < 172:
         week1B.append(int(line.strip()))
     elif idx == 7:
