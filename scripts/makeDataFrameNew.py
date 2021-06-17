@@ -27,7 +27,9 @@ for idx, line in enumerate(f):
     if idx == 3:
         date = line.strip()
         continue
-    if idx > 17 and idx < 68:
+    # Gemeinde names
+    gemeindeStart = 6
+    if idx >= gemeindeStart and idx < gemeindeStart + 50:
         locations.append(line.strip())
     elif idx > 69 and idx < 120:
         week1A.append(int(line.strip().strip('*')))
