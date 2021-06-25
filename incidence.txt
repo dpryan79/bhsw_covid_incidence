@@ -948,3 +948,53 @@ Titisee-Neustadt	17.06.2021	0
 Umkirch	17.06.2021	0
 Vogtsburg im Kaiserstuhl	17.06.2021	0
 Wittnau	17.06.2021	0
+Au	24.06.2021	0
+Auggen	24.06.2021	35.7653791130186
+Bad Krozingen	24.06.2021	9.814987485890954
+Badenweiler	24.06.2021	22.56317689530686
+Ballrechten-Dottingen	24.06.2021	0
+Bollschweil	24.06.2021	0
+Bötzingen	24.06.2021	0
+Breisach am Rhein	24.06.2021	0
+Breitnau	24.06.2021	0
+Buchenbach	24.06.2021	0
+Buggingen	24.06.2021	0
+Ebringen	24.06.2021	0
+Ehrenkirchen	24.06.2021	26.663111585121985
+Eichstetten am Kaiserstuhl	24.06.2021	0
+Eisenbach (Hochschwarzwald)	24.06.2021	0
+Eschbach	24.06.2021	0
+Feldberg (Schwarzwald)	24.06.2021	0
+Friedenweiler	24.06.2021	0
+Glottertal	24.06.2021	0
+Gottenheim	24.06.2021	0
+Gundelfingen	24.06.2021	0
+Hartheim am Rhein	24.06.2021	0
+Heitersheim	24.06.2021	0
+Heuweiler	24.06.2021	0
+Hinterzarten	24.06.2021	0
+Horben	24.06.2021	0
+Ihringen	24.06.2021	0
+Kirchzarten	24.06.2021	10.263779123473263
+Lenzkirch	24.06.2021	0
+Löffingen	24.06.2021	0
+March	24.06.2021	21.554046772281495
+Merdingen	24.06.2021	0
+Merzhausen	24.06.2021	0
+Müllheim	24.06.2021	5.241914347119568
+Münstertal/Schwarzwald	24.06.2021	39.43217665615142
+Neuenburg am Rhein	24.06.2021	0
+Oberried	24.06.2021	0
+Pfaffenweiler	24.06.2021	0
+Schallstadt	24.06.2021	0
+Schluchsee	24.06.2021	0
+Sölden	24.06.2021	0
+St. Märgen	24.06.2021	0
+St. Peter	24.06.2021	0
+Staufen im Breisgau	24.06.2021	0
+Stegen	24.06.2021	0
+Sulzburg	24.06.2021	35.49875754348598
+Titisee-Neustadt	24.06.2021	0
+Umkirch	24.06.2021	0
+Vogtsburg im Kaiserstuhl	24.06.2021	0
+Wittnau	24.06.2021	0
