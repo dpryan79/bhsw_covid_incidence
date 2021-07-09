@@ -1048,3 +1048,53 @@ Titisee-Neustadt	01.07.2021	8.198737394441256
 Umkirch	01.07.2021	0
 Vogtsburg im Kaiserstuhl	01.07.2021	0
 Wittnau	01.07.2021	0
+Au	08.07.2021	0
+Auggen	08.07.2021	0
+Bad Krozingen	08.07.2021	9.814987485890954
+Badenweiler	08.07.2021	0
+Ballrechten-Dottingen	08.07.2021	0
+Bollschweil	08.07.2021	0
+Bötzingen	08.07.2021	0
+Breisach am Rhein	08.07.2021	12.913223140495868
+Breitnau	08.07.2021	0
+Buchenbach	08.07.2021	0
+Buggingen	08.07.2021	0
+Ebringen	08.07.2021	0
+Ehrenkirchen	08.07.2021	0
+Eichstetten am Kaiserstuhl	08.07.2021	0
+Eisenbach (Hochschwarzwald)	08.07.2021	0
+Eschbach	08.07.2021	0
+Feldberg (Schwarzwald)	08.07.2021	0
+Friedenweiler	08.07.2021	0
+Glottertal	08.07.2021	0
+Gottenheim	08.07.2021	0
+Gundelfingen	08.07.2021	25.67833604382436
+Hartheim am Rhein	08.07.2021	0
+Heitersheim	08.07.2021	15.738117721120554
+Heuweiler	08.07.2021	0
+Hinterzarten	08.07.2021	0
+Horben	08.07.2021	0
+Ihringen	08.07.2021	32.50975292587776
+Kirchzarten	08.07.2021	0
+Lenzkirch	08.07.2021	0
+Löffingen	08.07.2021	0
+March	08.07.2021	21.554046772281495
+Merdingen	08.07.2021	0
+Merzhausen	08.07.2021	0
+Müllheim	08.07.2021	0
+Münstertal/Schwarzwald	08.07.2021	19.71608832807571
+Neuenburg am Rhein	08.07.2021	8.147967082212988
+Oberried	08.07.2021	0
+Pfaffenweiler	08.07.2021	0
+Schallstadt	08.07.2021	15.745551881593451
+Schluchsee	08.07.2021	0
+Sölden	08.07.2021	0
+St. Märgen	08.07.2021	0
+St. Peter	08.07.2021	0
+Staufen im Breisgau	08.07.2021	0
+Stegen	08.07.2021	0
+Sulzburg	08.07.2021	0
+Titisee-Neustadt	08.07.2021	8.198737394441256
+Umkirch	08.07.2021	0
+Vogtsburg im Kaiserstuhl	08.07.2021	0
+Wittnau	08.07.2021	0
