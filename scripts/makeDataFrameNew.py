@@ -19,28 +19,33 @@ population = [1480, 2796, 20377, 4432, 2440, 2338, 5331, 15488, 1751, 3129, 4387
 date = None
 prevdate = None
 nextChunk = 0
+dateLine = 5
+gemeindeStart = 8
+w2astart = 72
+w2bstart = 125
+w1astart = 182
+w1bstart = 233
 for idx, line in enumerate(f):
     if args.debug:
         print([idx, line.strip()])
-    if idx < 3:
+    if idx < dateLine:
         continue
-    if idx == 3:
+    if idx == dateLine:
         date = line.strip()
         continue
     # Gemeinde names
-    gemeindeStart = 6
     if idx >= gemeindeStart and idx < gemeindeStart + 50:
         locations.append(line.strip())
-    elif idx > 69 and idx < 120:
+    elif idx >= w1astart and idx < w1astart + 50:
         week1A.append(int(line.strip().strip('*')))
-    elif idx > 121 and idx < 172:
+    elif idx >= w1bstart and idx < w1bstart + 50:
         week1B.append(int(line.strip()))
     elif idx == 7:
         prevdate = line.strip()
         continue
-    elif idx > 173 and idx < 224:
+    elif idx >= w2astart and idx < w2astart + 50:
         week2A.append(int(line.strip()))
-    elif idx > 225 and idx < 276:
+    elif idx >= w2bstart and idx < w2bstart + 50:
         week2B.append(int(line.strip()))
 
 if args.twoWeeks:
