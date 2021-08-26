@@ -19,12 +19,12 @@ population = [1480, 2796, 20377, 4432, 2440, 2338, 5331, 15488, 1751, 3129, 4387
 date = None
 prevdate = None
 nextChunk = 0
-dateLine = 5
-gemeindeStart = 8
-w2astart = 72
-w2bstart = 125
-w1astart = 182
-w1bstart = 233
+dateLine = 3
+gemeindeStart = 6
+w1astart = 70
+w1bstart = 121
+w2astart = 172
+w2bstart = 223
 for idx, line in enumerate(f):
     if args.debug:
         print([idx, line.strip()])
