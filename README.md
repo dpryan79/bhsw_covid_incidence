@@ -19,4 +19,3 @@ Data is extracted from the PDF produced by the Landesregierung Breisgau-Hochschw
 # Image creation
 
 The TSV data is loaded into R and the final animated GIF created using ggplot2, gganimate, sf and gifski.
- 
