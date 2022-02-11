@@ -21,11 +21,11 @@ prevdate = None
 nextChunk = 0
 dateLine = 3
 gemeindeStart = 12
-incidenceStart = 284
-w1astart = 70
-w1bstart = 121
-w2astart = 172
-w2bstart = 223
+incidenceStart = 384
+w1astart = 64
+w1bstart = 115
+w2astart = 181
+w2bstart = 232
 incidence = []
 for idx, line in enumerate(f):
     if args.debug:
@@ -38,30 +38,30 @@ for idx, line in enumerate(f):
     # Gemeinde names
     if idx >= gemeindeStart and idx < gemeindeStart + 50:
         locations.append(line.strip())
-    #elif idx >= w1astart and idx < w1astart + 50:
-    #    week1A.append(int(line.strip().strip('*')))
-    #elif idx >= w1bstart and idx < w1bstart + 50:
-    #    week1B.append(int(line.strip()))
-    #elif idx == 7:
-    #    prevdate = line.strip()
-    #    continue
-    #elif idx >= w2astart and idx < w2astart + 50:
-    #    week2A.append(int(line.strip()))
-    #elif idx >= w2bstart and idx < w2bstart + 50:
-    #    week2B.append(int(line.strip()))
-    elif idx >= incidenceStart and idx < incidenceStart + 50:
-        incidence.append(int(line.strip()))
+    elif idx >= w1astart and idx < w1astart + 50:
+        week1A.append(int(line.strip().strip('*')))
+    elif idx >= w1bstart and idx < w1bstart + 50:
+        week1B.append(int(line.strip()))
+    elif idx == 7:
+        prevdate = line.strip()
+        continue
+    elif idx >= w2astart and idx < w2astart + 50:
+        week2A.append(int(line.strip()))
+    elif idx >= w2bstart and idx < w2bstart + 50:
+        week2B.append(int(line.strip()))
+    #elif idx >= incidenceStart and idx < incidenceStart + 50:
+    #    incidence.append(int(line.strip()))
 
 #if args.twoWeeks:
 #    print("Location\tDate\tIncidence")
 
-#for l, w1a, w1b, w2a, w2b, p in zip(locations, week1A, week1B, week2A, week2B, population):
-for l, currentWeek, p in zip(locations, incidence, population):
-    #currentWeek = w1a - w2a
-    #lastWeek = w1b - currentWeek
+#for l, currentWeek, p in zip(locations, incidence, population):
+for l, w1a, w1b, w2a, w2b, p in zip(locations, week1A, week1B, week2A, week2B, population):
+    currentWeek = w1a - w2a
+    lastWeek = w1b - currentWeek
     p100k = p / 100000.
     p100kpw1 = max(0, currentWeek/p100k)
-    #p100kpw2 = max(0, lastWeek/p100k)
+    p100kpw2 = max(0, lastWeek/p100k)
     if args.debug:
         print("{}\t{}\t{}\t{}".format(l, date, currentWeek, p100kpw1))
     else:
