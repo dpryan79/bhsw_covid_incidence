@@ -12,7 +12,7 @@ bhsw = shps[which(shps$NUTS=='DE132'),]
 # Load incidence data, add color groups for ggplot2
 incidence = read.delim("incidence.txt")
 incidence$Date = as.Date(incidence$Date, format="%d.%m.%Y")
-breaks = c(-1, 0,5,25,50,100,250,500,1000,2000)
+breaks = c(-1, 0,5,25,50,100,250,500,1000,2000, 10000)
 breakLabels = c("0", sprintf(">%i, <=%i", breaks[seq(2, length(breaks)-1)], breaks[seq(3, length(breaks))]))
 incidence$Group = cut(incidence$Incidence, breaks=breaks, labels=breakLabels)
 
@@ -34,7 +34,7 @@ bhsw$nudgeY[bhsw$GEN == "Eichstetten am Kaiserstuhl"] = 1000
 
 # Plot
 annotation = "GIS: © GeoBasis-DE / BKG 2016\nData: Landeskreis Breisgau-Hochschwarzwald\nImage: https://github.com/dpryan79/bhsw_covid_incidence"
-colorscale = c("gray80", "#f4fbc6", "#effb70", "#f8c001", "#d70f01", "#980101", "#690109", "#e60183", "black")
+colorscale = c("gray80", "#f4fbc6", "#effb70", "#f8c001", "#d70f01", "#980101", "#690109", "#e60183", "black", "gold")
 g = ggplot(bhswi) + geom_sf(aes(fill=Group, group=seq_along(Group))) + theme_classic()
 g = g + annotate(geom="text", label=annotation, x=Inf, y=-Inf, hjust=1, vjust=-0.1, size=5)
 g = g + labs(fill="Cases/100,000\nper week", x="", y="") + scale_fill_manual(values=colorscale, guide = guide_legend(reverse=TRUE), drop=F)
