@@ -24,8 +24,8 @@ gemeindeStart = 12
 incidenceStart = 384
 w1astart = 64
 w1bstart = 115
-w2astart = 181
-w2bstart = 232
+w2astart = 237
+w2bstart = 288
 incidence = []
 for idx, line in enumerate(f):
     if args.debug:
